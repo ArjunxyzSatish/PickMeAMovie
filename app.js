@@ -50,7 +50,12 @@ app.get("/comments", (req, res) => {
 
 app.get('/download', (req, res) => {
 	const file = path.join(__dirname, 'downloads', 'PickMeAMovie.apk');
-	res.download(file);
+	res.download(file, err => {
+        if (err) {
+            console.error('Error downloading file:', err);
+            res.status(500).send('File download failed.');
+        }
+    });
 })
 
 

@@ -1,0 +1,25 @@
+<%- include('partials/headerComments') %>
+
+  <h1>Comments Page</h1>
+
+<div id="commentSection">
+  <ul id="commentsList">
+    <% comments.forEach((comment) => { %>
+        <li><span id="author"><%= comment.author %></span> <span class="extra">says,</span> "<%= comment.commentBody %>" <span class="extra">- <%= comment.dateCreated.getDate()%>/<%= comment.dateCreated.getMonth()%>/<%= comment.dateCreated.getFullYear()%></span></li>
+    <% }) %> 
+  </ul>
+</div>
+
+  <form action="/comments" method="post">
+    <div id="Name">
+      <input type="text" name="author" placeholder="Enter your name" required>
+    </div>
+    <div id="commentArea">
+      <textarea name="comment" id="textAreaComment" cols="30" rows="6" placeholder="Say something..." required></textarea>
+    </div>
+    <div id="Submit">
+      <input type="submit" value="Submit!">
+    </div>
+  </form>
+
+<%- include('partials/footer') %>

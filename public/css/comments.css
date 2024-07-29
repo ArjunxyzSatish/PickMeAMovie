@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Lacquer';
+    src: url('/fonts/lacquer.ttf') format('truetype');
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    background-color:  hsla(147, 64%, 61%, 0.781);
+}
+
+h1{
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 2px 2px 3px #000000;
+    font-family: 'Lacquer';
+    color: #05386B;
+}
+
+
+#commentSection{
+    margin: 80px;
+}
+
+li{
+    list-style-position: inside;
+    list-style-type: disk;
+    color: #05386B;
+    font-family: 'Kufam', cursive;
+    font-size: 30px;
+}
+
+#author{
+    text-transform: capitalize;
+}
+
+.extra{
+    font-size: 20px;
+}
+
+#Name, #commentArea, #Submit{
+    margin: 10px;
+    text-align: center;
+}
+
+input[type=text],textArea{
+    padding: 15px;
+    width: 400px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+  
+input[type=submit]{
+    background-color: #05386B;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 15px;
+    width: 15%
+}
+
+input, textarea{
+    border: none;
+}

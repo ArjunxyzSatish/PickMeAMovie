@@ -28,6 +28,8 @@ app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, 'views'));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Get req for the homepage
 app.get("/", (req, res) => {
 	res.render("homepage");
@@ -47,7 +49,7 @@ app.get("/comments", (req, res) => {
 });
 
 app.get('/download', (req, res) => {
-	const file = `${__dirname}/downloads/PickMeAMovie.apk`;
+	const file = path.join(__dirname, 'downloads', 'PickMeAMovie.apk');
 	res.download(file);
 })
 

@@ -26,6 +26,8 @@ let comment = mongoose.model('Comments', commentSchema);
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+app.set("views", path.join(__dirname, 'views'));
+
 // Get req for the homepage
 app.get("/", (req, res) => {
 	res.render("homepage");

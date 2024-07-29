@@ -70,6 +70,12 @@ app.get('/api/credentials', (req, res) => {
 	});
 });
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 app.listen(port, () => {
 	console.log(`running on port ${ port }`);
 });
@@ -94,3 +100,5 @@ function saveComment(commentToBeAdded){
 		}
 	}); 
 }
+
+
